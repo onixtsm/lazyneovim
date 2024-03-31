@@ -1,0 +1,4 @@
+#ifndef @CPP_HDR_GUARD@
+#define @CPP_HDR_GUARD@
+
+#endif
