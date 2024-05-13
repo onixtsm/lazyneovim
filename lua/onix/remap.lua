@@ -29,3 +29,8 @@ vim.keymap.set('v', '<', '<gv', { noremap = true, silent = true })
 vim.keymap.set('v', '>', '>gv', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-Down>', '<cmd>cnext<cr>', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-Up>', '<cmd>cprevious<cr>', { noremap = true, silent = true })
+
+vim.keymap.set('n', '<S-H>', "<cmd>bp<cr>", { noremap = true, silent = true })
+vim.keymap.set('n', '<S-L>', "<cmd>bn<cr>", { noremap = true, silent = true })
+
+

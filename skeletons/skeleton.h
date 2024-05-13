@@ -1,4 +1,4 @@
-#ifndef @CPP_HDR_GUARD@
-#define @CPP_HDR_GUARD@
+#ifndef @CPP_HDR_GUARD@_
+#define @CPP_HDR_GUARD@_
 
 #endif

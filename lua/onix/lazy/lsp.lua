@@ -29,7 +29,12 @@ local servers = {
       completeUnimported = true,
       clangdFileStatus = true,
     }
+  },
+  systemverilog = {
+    single_file_support = true
   }
+
+
 }
 
 local on_attach = function(client, bufnr)
@@ -39,6 +44,7 @@ local on_attach = function(client, bufnr)
     end
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
+
 
 
   if client.server_capabilities.hoverProvider then
@@ -107,13 +113,15 @@ local mason_lsp_config = function()
 end
 
 return {
-  "williamboman/mason-lspconfig.nvim",
+  "neovim/nvim-lspconfig",
   lazy = true,
   event = { "BufReadPost", "BufWritePost", "BufNewFile" },
-  config = mason_lsp_config,
+  config = nvim_lsp_config,
   dependencies = {
-    { "williamboman/mason.nvim", config = mason_config },
-    { "neovim/nvim-lspconfig",   config = nvim_lsp_config },
-    { "folke/neoconf.nvim",      config = neoconf_config }
+    { "williamboman/mason.nvim",           config = mason_config },
+    { "williamboman/mason-lspconfig.nvim", config = mason_lsp_config },
+    { "folke/neoconf.nvim",                config = neoconf_config },
+    { "hrsh7th/nvim-cmp", }
+
   }
 }
