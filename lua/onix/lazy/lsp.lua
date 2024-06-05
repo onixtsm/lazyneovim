@@ -79,13 +79,17 @@ local on_attach = function(client, bufnr)
   nmap(']d', vim.diagnostic.goto_next, 'Next diagnostic')
   nmap('<space>q', vim.diagnostic.setloclist, 'Setloclist')
 
+
+  local lspconfig = require('lspconfig')
   if client.config.root_dir ~= nil then
-    client.config.root_dir = require('nvim-lspconfig').util.root_patter("Makefile", "build.sh", ".git",
-      "compile_command.js")
+    client.config.root_dir = function()
+      return lspconfig.util.root_pattern()("Makefile", "build.sh", ".git",
+        "compile_command.js")
+    end
   end
 
   if client.config.root_dir ~= nil then
-    vim.api.nvim_set_current_dir(client.config.root_dir)
+    -- vim.api.nvim_set_current_dir(client.config.root_dir())
   end
 end
 

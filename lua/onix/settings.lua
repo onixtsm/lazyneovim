@@ -49,7 +49,7 @@ vim.cmd("au FocusLost * :wa")
 
 vim.opt.mouse = 'a'
 
-vim.opt.showcmd = false
+vim.opt.showcmd = true
 
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
