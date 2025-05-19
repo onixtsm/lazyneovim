@@ -14,6 +14,24 @@ local servers = {
       }
     }
   },
+  pylsp = {
+    settings = {
+      pylsp = {
+        plugins = {
+          pycodestyle = {
+            enable = false,
+            ignore = { 'E501' },
+            maxLineLength = 100
+          },
+          flake8 = {
+            enabled = true,
+            maxLineLength = 120
+          }
+
+        }
+      }
+    },
+  },
   clangd = {
     cmd = {
       "clangd",
@@ -30,10 +48,10 @@ local servers = {
       clangdFileStatus = true,
     }
   },
+
   systemverilog = {
     single_file_support = true
-  }
-
+  },
 
 }
 
@@ -103,7 +121,7 @@ local mason_lsp_config = function()
     automatic_install = true,
     handlers = { function(server_name)
       local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+      -- capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
       local server = require('lspconfig')[server_name]
       server.setup {

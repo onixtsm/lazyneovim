@@ -9,6 +9,9 @@ return {
         ['main.c']  = "skeleton.main.c",
         -- patterns can map to multiple templates
         ['LICENSE'] = { "license.mit.skel", "license.gpl.skel" }
+      },
+      substitutions = {
+      ["YEAR"] = os.date("%Y")
       }
     }
   end

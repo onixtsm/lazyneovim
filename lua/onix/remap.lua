@@ -1,10 +1,6 @@
+-- map leader to <Space>
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "File tree" })
-
-vim.keymap.set("n", "<leader><leader>", function()
-  vim.cmd("so")
-  print(vim.fn.expand("%") .. " sourced")
-end)
 
 vim.keymap.set("n", "j", "gj", { noremap = true, silent = true })
 vim.keymap.set("n", "k", "gk", { noremap = true, silent = true })
@@ -34,4 +30,6 @@ vim.keymap.set('n', '<C-Up>', '<cmd>cprevious<cr>', { noremap = true, silent = t
 vim.keymap.set('n', '<S-H>', "<cmd>bp<cr>", { noremap = true, silent = true })
 vim.keymap.set('n', '<S-L>', "<cmd>bn<cr>", { noremap = true, silent = true })
 
+vim.keymap.set('n', '<c-a>', "<c-a>l", { noremap = true, silent = true })
+vim.keymap.set('n', '<c-x>', "<c-x>h", { noremap = true, silent = true })
 
